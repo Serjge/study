@@ -1,0 +1,14 @@
+body {
+  background-color: #010101;
+}
+
+.car .hide {
+  display: none;
+}
+.car__infoPanel {
+  font-weight: bold;
+  color: aliceblue;
+}
+.car__infoPanel span {
+  font-style: aliceblue;
+}
