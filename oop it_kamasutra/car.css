@@ -1,14 +1,17 @@
 body {
-  background-color: #010101;
+	background-color: #010101;
 }
 
 .car .hide {
-  display: none;
+	display: none;
 }
 .car__infoPanel {
-  font-weight: bold;
-  color: aliceblue;
+	font-weight: bold;
+	color: aliceblue;
 }
 .car__infoPanel span {
-  font-style: aliceblue;
+	font-style: aliceblue;
+}
+.car__controls {
+	color: aliceblue;
 }
