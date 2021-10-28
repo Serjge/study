@@ -2,6 +2,8 @@ function Car(containerId) {
   this._engine = new Engine();
   this._gearBox = new GearBox();
 
+  this._logger = new Logger();
+
   this._render(containerId);
 }
 
@@ -15,15 +17,16 @@ Car.prototype = {
       this._carCannotBeStarted();
     }
 
-    console.log('started');
+    this._logger.log('started');
   },
 
   _carStarted: function () {
-    console.log('ok');
+    this._logger.log('ok');
   },
 
   _carCannotBeStarted: function () {
-    console.log('Not ok');
+    this._logger.log('Not ok');
+    this._drawStatus("Car can't be started");
   },
 
   _render: function (containerId) {
@@ -40,5 +43,27 @@ Car.prototype = {
 		</div>
 		</div>
 		`;
+
+    this._startButtons = document
+      .getElementById(containerId)
+      .querySelectorAll("[data-role='start_car']");
+    this._statusLabels = document
+      .getElementById(containerId)
+      .querySelectorAll("[data-role='status']");
+    this._gearBoxValueabels = document
+      .getElementById(containerId)
+      .querySelectorAll("[data-role='gearBoxValue']");
+  },
+
+  _drawStatus: function (status) {
+    this._processEls(this._statusLabels, function (item) {
+      item.innerHTML = status;
+    });
+  },
+  _processEls: function (array, process) {
+    for (let i = 0; i < array.length; i++) {
+      const item = array[i];
+      process(item);
+    }
   },
 };
