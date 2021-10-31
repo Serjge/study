@@ -105,6 +105,7 @@ function startCarProcess(containerId) {
   const gearBoxValueabels = document
     .getElementById(containerId)
     .querySelectorAll("[data-role='gearBoxValue']");
+
   processEls(startButtons, function (item) {
     item.addEventListener('click', startCarListener);
   });

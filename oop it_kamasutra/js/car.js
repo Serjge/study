@@ -17,14 +17,14 @@ function Car(containerId) {
 
 Car.prototype = {
   start: function () {
-    let randomNumber = Math.random();
-
-    if (randomNumber > 0.5) {
-      this._carStarted();
+    let startResult = this._engine.start();
+    if (startResult == true) {
+      this._view.drawStatus('Car have started');
+      this._view.onCarStarted();
+      this._gearBox.start();
     } else {
-      this._carCannotBeStarted();
+      this._view.drawStatus("Car can't be started. Try again!");
     }
-
     this._logger.log('started');
   },
 
