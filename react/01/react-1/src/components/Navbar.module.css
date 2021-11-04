@@ -1,0 +1,13 @@
+.nav {
+    grid-area: nav;
+    background: #2d2d2d;
+    text-align: center;
+}
+.item {
+    color: aqua;
+    padding: 5px;
+}
+.item a {
+    color: antiquewhite;
+    text-decoration: none;
+}
