@@ -1,0 +1,16 @@
+body {
+  background: #010101;
+}
+
+.App-header {
+  background: #1e1e1e;
+
+  & img {
+    width: 100px;
+  }
+
+  & p {
+    font-size: 50px;
+    color: #61dafb;
+  }
+}
